@@ -1,13 +1,11 @@
 import Header from "./components/layout/Header";
-import Slide from "./pages/Slide";
-import WeekCalendar from "./components/weekcalendar/WeekCalendar";
-import WeekCalendarTest from "./components/weekcalendar/WeekCalendarTest";
+import JoinPage from "./pages/JoinPage";
 
 function App() {
   return (
     <div>
       <Header />
-      <Slide />
+      <JoinPage />
     </div>
   );
 }
