@@ -4,7 +4,7 @@ import Calendar from "react-calendar";
 import "./WeekCalendar.css";
 
 function WeekCalendar() {
-  const weekName = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
+  const weekName = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
   const formatShortWeekday = (locale, date) => {
     const idx = date.getDay();
     return weekName[idx];

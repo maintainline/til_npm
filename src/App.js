@@ -1,11 +1,14 @@
-import Header from "./components/layout/Header";
-import JoinPage from "./pages/JoinPage";
+import CounterAtom from "./components/CounterAtom";
+import TodoList from "./components/TodoList";
+import WeekCalendar from "./components/weekcalendar/WeekCalendar";
+import WeekCalendarTest from "./components/weekcalendar/WeekCalendarTest";
 
 function App() {
   return (
     <div>
-      <Header />
-      <JoinPage />
+      <CounterAtom />
+      <TodoList />
+      {/* <WeekCalendarTest /> */}
     </div>
   );
 }
