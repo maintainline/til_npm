@@ -1,15 +1,15 @@
-import CounterAtom from "./components/CounterAtom";
-import TodoList from "./components/TodoList";
-import WeekCalendar from "./components/weekcalendar/WeekCalendar";
-import WeekCalendarTest from "./components/weekcalendar/WeekCalendarTest";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import LoginPage from "./pages/LoginPage";
+import After from "./pages/member/After";
 
 function App() {
   return (
-    <div>
-      <CounterAtom />
-      <TodoList />
-      {/* <WeekCalendarTest /> */}
-    </div>
+    <Router>
+      <LoginPage />
+      <Routes>
+        <Route path="/member/kakao" element={<After />}></Route>
+      </Routes>
+    </Router>
   );
 }
 
