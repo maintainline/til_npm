@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { getKakaoLoginLink } from "../kakao/kakaoapi";
 import { useRecoilState } from "recoil";
 import { KakaoLoginAtom } from "../atoms/kakaoLoginAtom";
+import { getGoogleLoginLink } from "../google/googleapi";
 
 function LoginPage() {
   const navigate = useNavigate();
@@ -20,6 +21,11 @@ function LoginPage() {
     navigate("/");
   };
 
+  const googleLogin = () => {
+    getGoogleLoginLink();
+    
+  };
+
   return (
     <div>
       <h1>LoginPage</h1>
@@ -28,6 +34,9 @@ function LoginPage() {
       ) : (
         <Link to={kakaoLoginUrl}>카카오 로그인</Link>
       )}
+      <div>
+        <button onClick={googleLogin}>구글 로그인</button>
+      </div>
     </div>
   );
 }
