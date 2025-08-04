@@ -1,18 +1,14 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import LoginPage from "./pages/LoginPage";
-import After from "./pages/member/After";
-import AfterGoogle from "./pages/member/AfterGoogle";
+import { useEffect } from "react";
+import { getTodos } from "./apis/todoApi";
 
 function App() {
-  return (
-    <Router>
-      <LoginPage />
-      <Routes>
-        <Route path="/member/kakao" element={<After />}></Route>
-        <Route path="/member/google" element={<AfterGoogle />}></Route>
-      </Routes>
-    </Router>
-  );
+  //js
+
+  useEffect(() => {
+    getTodos();
+  }, []);
+  //jsx
+  return <div>App</div>;
 }
 
 export default App;
