@@ -75,24 +75,30 @@ function App() {
 
   //submit 시 실행될 함수
   const handleSubmitUser = async data => {
+    // data 는 객체 형태로 전달이 됩니다.
+    // {...register("키명")}==>{키명 : input 요소의 값}
     console.log(data);
     try {
       // 1. 파일 첨부없으면 axios.post ("주소",data)
+
       // 2. 파일 존재하는 경우
-      const sendData = new FormData();
+      const sendData = new FormData(); // 여러가지 포맷의 데이터를 전송
+      // form 객체에  append (키명, 키값); : 전달할 요소를 추가한다.
       sendData.append("name", data.name);
       sendData.append("id", data.id);
       sendData.append("email", data.email);
       sendData.append("pw", data.pw);
-      // 이미지 1장일때
+      // 이미지 1장일때, string 이 아니고 ,file
       sendData.append("previewfile", data.previewfile);
-      // 이미지 여러장장일때
+      // 이미지 여러장장일때 string 이 아니고 ,file
       sendData.append("previewlist", data.previewlist);
+      // 아래는 글자 외에 파일도 첨부되었을때 headers 를 셋팅해주어야함.
       const res = await axios.post("주소", sendData, {
         headers: {
           "Content-Type": "multipart/form-data", // 파일 전송 형식
         },
       });
+      console.log(res.data); // 정상적으로 처리됨을 확인해 줌.
     } catch (error) {
       console.log(error);
     }
