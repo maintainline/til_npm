@@ -1,11 +1,11 @@
 import React from "react";
-import AddForm from "./components/editor/AddForm";
+import AniPage from "./pages/AniPage";
 
 function App() {
   return (
     <div>
-      <h1>Editor</h1>
-      <AddForm />
+      <h1>Anime 예제</h1>
+      <AniPage />
     </div>
   );
 }
